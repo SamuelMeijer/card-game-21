@@ -16,5 +16,5 @@ startGameBtn.addEventListener("click", (event) => {
 
   console.log("Start a game of 21");
   // Testing Card
-  console.log(Card("J", "Hearts"));
+  console.log(Card("J", 2));
 });
