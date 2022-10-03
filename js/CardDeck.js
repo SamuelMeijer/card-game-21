@@ -63,7 +63,8 @@ const populateDeck = function () {
 
 /**
  * Drawing the last card from the deck.
- * @method
+ * @method drawCard
+ * @memberof CardDeck
  * @returns {Object} - The card that is drawn from the deck.
  * @throws {Error} - Will throw an error if the deck is empty.
  */
@@ -73,6 +74,20 @@ CardDeck.prototype.drawCard = function () {
   // Removing the last element(card) in the carddeck and returning it.
   let drawnCard = this.deck.pop();
   return drawnCard;
+};
+
+/**
+ * Shuffling the deck of cards with a Fisher-Yates shuffle method.
+ * @method shuffle
+ * @memberof CardDeck
+ */
+CardDeck.prototype.shuffle = function () {
+  for (let i = this.deck.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = this.deck[i];
+    this.deck[i] = this.deck[j];
+    this.deck[j] = temp;
+  }
 };
 
 export { CardDeck };

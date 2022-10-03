@@ -20,7 +20,7 @@ startGameBtn.addEventListener("click", (event) => {
   // Testing Card
   const cardDeck = new CardDeck();
   console.log(cardDeck);
-
+  cardDeck.shuffle();
   const drawnCard = cardDeck.drawCard();
   console.log(drawnCard);
   console.log(cardDeck);
