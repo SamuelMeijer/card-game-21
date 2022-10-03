@@ -15,15 +15,12 @@ import { Card } from "./Card.js";
  * @constructor
  */
 function CardDeck() {
-  // Calling function 'populateDeck'.
-  const deck = populateDeck();
-
-  return deck;
+  this.deck = populateDeck();
 }
 
 /**
  * Populating an array with instances of 'Card' that represents a playcard.
- * @returns {Object[]} - The array populated with Card-objects.
+ * @returns {Object[]} - An array populated with Card-objects.
  */
 const populateDeck = function () {
   const output = [];
@@ -53,7 +50,6 @@ const populateDeck = function () {
           cardName = i.toString();
       }
 
-      console.log(cardName, cardSuit);
       // Initiates an instance of 'Card' with the current cardSuit and cardName.
       const newCard = Card(cardName, cardSuit);
       // Adding the card to the array refered to by 'output'.
@@ -63,6 +59,20 @@ const populateDeck = function () {
 
   // Returning the array refered to by 'output'
   return output;
+};
+
+/**
+ * Drawing the last card from the deck.
+ * @method
+ * @returns {Object} - The card that is drawn from the deck.
+ * @throws {Error} - Will throw an error if the deck is empty.
+ */
+CardDeck.prototype.drawCard = function () {
+  // TODO: Errorhandling - Empty deck
+
+  // Removing the last element(card) in the carddeck and returning it.
+  let drawnCard = this.deck.pop();
+  return drawnCard;
 };
 
 export { CardDeck };

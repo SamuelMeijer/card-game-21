@@ -16,6 +16,12 @@ startGameBtn.addEventListener("click", (event) => {
   // TODO: Add functionality
 
   console.log("Start a game of 21");
+
   // Testing Card
-  console.log(CardDeck());
+  const cardDeck = new CardDeck();
+  console.log(cardDeck);
+
+  const drawnCard = cardDeck.drawCard();
+  console.log(drawnCard);
+  console.log(cardDeck);
 });
