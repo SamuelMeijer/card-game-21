@@ -8,6 +8,7 @@
 // Importing the Card module.
 import { Card } from "./Card.js";
 import { CardDeck } from "./CardDeck.js";
+import { Game } from "./Game.js";
 
 const startGameBtn = document.querySelector("#startGameBtn");
 
@@ -24,4 +25,9 @@ startGameBtn.addEventListener("click", (event) => {
   const drawnCard = cardDeck.drawCard();
   console.log(drawnCard);
   console.log(cardDeck);
+
+  const game = new Game();
+  console.log(game);
+  game.shuffleDeck();
+  console.log(game.availableCards);
 });
