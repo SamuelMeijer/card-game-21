@@ -39,4 +39,13 @@ function Game() {
   });
 }
 
+/**
+ * Shuffling the deck of cards with a Fisher-Yates shuffle method.
+ *  @method shuffleDeck
+ *  @memberof Game
+ */
+Game.prototype.shuffleDeck = function () {
+  this.cardDeck.shuffle();
+};
+
 export { Game };
